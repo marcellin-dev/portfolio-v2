@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import AnalyticsScript from "@/components/AnalyticsScript";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
+      <AnalyticsScript />
       <SectionDivider />
       <About />
       <Projects />
