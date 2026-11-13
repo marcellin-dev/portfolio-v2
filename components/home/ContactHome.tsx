@@ -34,8 +34,8 @@ export default function ContactHome({ locale }: ContactHomeProps) {
       `[Type: ${requestType}]\n[Nom: ${name}]\n\n${message}`
     );
 
-    const { error } = await sendEmail(formData);
-    setStatus(error ? "error" : "success");
+    const result = await sendEmail(formData);
+    setStatus(result?.error ? "error" : "success");
   }
 
   return (

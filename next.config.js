@@ -10,7 +10,13 @@ const nextConfig = {
   },
   experimental: {
     serverActions: true,
-    serverComponentsExternalPackages: ["@react-pdf/renderer"],
+    serverComponentsExternalPackages: [
+      "@react-pdf/renderer",
+      "@react-email/components",
+      "@react-email/render",
+      "@react-email/tailwind",
+      "resend",
+    ],
   },
 };
 

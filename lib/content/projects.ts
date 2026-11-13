@@ -1,4 +1,3 @@
-import type { StaticImageData } from "next/image";
 
 export type ProjectCategory = "ai" | "fintech" | "enterprise" | "devops";
 
@@ -217,6 +216,119 @@ export const projects: Project[] = [
       ],
     },
     technologies: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+  },
+  {
+    slug: "avomark",
+    featured: false,
+    category: "enterprise",
+    imageKey: null,
+    title: {
+      fr: "Avomark — Plateforme de fidélisation client",
+      en: "Avomark — Customer Loyalty Platform",
+    },
+    summary: {
+      fr: "Évolution d'une plateforme SaaS française de fidélisation et de marketing omnicanal utilisée par plus de 4 000 points de vente, dans le cadre d'une mission chez Abyster Consulting.",
+      en: "Evolution of a French omnichannel loyalty and marketing SaaS platform used by 4,000+ retail points, as part of an assignment at Abyster Consulting.",
+    },
+    role: {
+      fr: "Développeur Fullstack chez Abyster Consulting — évolution de la plateforme, nouvelles fonctionnalités, intégrations.",
+      en: "Full-Stack Developer at Abyster Consulting — platform evolution, new features, integrations.",
+    },
+    context: {
+      fr: "Avomark est un SaaS bordelais fondé en 1989 qui équipe plus de 4 000 points de vente en France avec des outils de fidélisation, de CRM et de marketing multicanal (SMS, email, push). Mission réalisée en tant que développeur chez Abyster Consulting.",
+      en: "Avomark is a Bordeaux-based SaaS founded in 1989, equipping 4,000+ retail locations in France with loyalty, CRM and multichannel marketing tools (SMS, email, push). Assignment carried out as a developer at Abyster Consulting.",
+    },
+    achievements: {
+      fr: [
+        "Évolution et maintenance de la plateforme .NET MVC : nouvelles fonctionnalités, refactoring, corrections.",
+        "Développement de composants frontend Angular pour les interfaces de gestion des campagnes et des clients.",
+        "Travail sur les connecteurs POS et les modules de fidélisation (cartes digitales, cagnottes, bons d'achat).",
+        "Collaboration en équipe avec revue de code et intégration continue.",
+      ],
+      en: [
+        "Platform evolution and maintenance on .NET MVC: new features, refactoring, bug fixes.",
+        "Development of Angular frontend components for campaign and customer management interfaces.",
+        "Work on POS connectors and loyalty modules (digital cards, wallets, vouchers).",
+        "Team collaboration with code review and continuous integration.",
+      ],
+    },
+    technologies: [".NET", "C#", "MVC", "Angular", "TypeScript", "SQL Server"],
+    links: [{ label: "avomark.co", url: "https://avomark.co" }],
+  },
+  {
+    slug: "erp-dgi-congo",
+    featured: false,
+    category: "enterprise",
+    imageKey: null,
+    title: {
+      fr: "ERP DGI Congo — Direction Générale des Impôts",
+      en: "DGI Congo ERP — Tax Administration System",
+    },
+    summary: {
+      fr: "Développement d'un ERP pour la Direction Générale des Impôts de la République du Congo, dans le cadre d'une mission chez Abyster Consulting.",
+      en: "Development of an ERP system for the General Tax Directorate (DGI) of the Republic of Congo, as part of an assignment at Abyster Consulting.",
+    },
+    role: {
+      fr: "Développeur Frontend chez Abyster Consulting — développement Angular de l'interface de gestion fiscale.",
+      en: "Frontend Developer at Abyster Consulting — Angular development of the tax management interface.",
+    },
+    context: {
+      fr: "La Direction Générale des Impôts de la République du Congo avait besoin d'une solution ERP pour moderniser la gestion de l'administration fiscale. Le backend était en Java. Mission réalisée chez Abyster Consulting.",
+      en: "The General Tax Directorate of the Republic of Congo needed an ERP solution to modernize tax administration management. The backend was in Java. Assignment carried out at Abyster Consulting.",
+    },
+    achievements: {
+      fr: [
+        "Développement des interfaces Angular : gestion des rôles, permissions et flux de validation.",
+        "Implémentation des modules métier frontend : contribuables, déclarations, paiements.",
+        "Intégration avec l'API Java backend : contrats API, gestion des erreurs, mapping des données.",
+        "Mise en place des tableaux de bord de reporting et de suivi des dossiers fiscaux.",
+      ],
+      en: [
+        "Angular interface development: role management, permissions and validation workflows.",
+        "Implementation of frontend business modules: taxpayers, declarations, payments.",
+        "Java backend API integration: API contracts, error handling, data mapping.",
+        "Implementation of reporting dashboards and tax file tracking interfaces.",
+      ],
+    },
+    technologies: ["Angular", "TypeScript", "REST API"],
+  },
+  {
+    slug: "bridge-africa",
+    featured: false,
+    category: "enterprise",
+    imageKey: null,
+    title: {
+      fr: "Bridge Africa Ventures — Présence digitale",
+      en: "Bridge Africa Ventures — Digital Presence",
+    },
+    summary: {
+      fr: "Développement d'interfaces web et intégration d'API pour Bridge Africa Ventures, une plateforme camerounaise permettant aux PME africaines de créer leur présence digitale et d'accéder à l'e-commerce.",
+      en: "Web interface development and API integration for Bridge Africa Ventures, a Cameroonian platform enabling African SMEs to build their digital presence and access e-commerce.",
+    },
+    role: {
+      fr: "Développeur Frontend — conception d'interfaces et intégration des services API.",
+      en: "Frontend Developer — interface design and API service integration.",
+    },
+    context: {
+      fr: "Bridge Africa Ventures (Yaoundé) accompagne les PME africaines dans leur transformation digitale : création de sites web, marketplace en ligne, SMS/USSD pour les zones à faible connectivité, et formation des entrepreneurs. Mission de août 2021 à février 2022.",
+      en: "Bridge Africa Ventures (Yaoundé) supports African SMEs in their digital transformation: website creation, online marketplace, SMS/USSD for low-connectivity zones, and entrepreneur training. Assignment from August 2021 to February 2022.",
+    },
+    achievements: {
+      fr: [
+        "Développement d'interfaces web pour la plateforme de mise en ligne des entreprises locales.",
+        "Intégration des API de services externes et gestion des flux de données.",
+        "Contribution au module marketplace : pages entreprises, annuaires, comparaison de prix.",
+        "Travail sur la compatibilité multi-plateforme et l'accessibilité pour les zones à faible connectivité.",
+      ],
+      en: [
+        "Web interface development for the local business listing platform.",
+        "Integration of external service APIs and data flow management.",
+        "Contribution to the marketplace module: business pages, directories, price comparison.",
+        "Work on cross-platform compatibility and accessibility for low-connectivity zones.",
+      ],
+    },
+    technologies: ["React", "JavaScript", "Node.js", "REST API"],
+    links: [{ label: "bridgeafricaventures.com", url: "https://www.bridgeafrica.bridgeafricaventures.com/" }],
   },
 ];
 
