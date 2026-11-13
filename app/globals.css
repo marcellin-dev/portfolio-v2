@@ -2,62 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-ivory: #F5F2EB;
+  --color-forest: #234B3D;
+  --color-forest-dark: #17201C;
+  --color-terracotta: #CE6B3D;
+  --color-separator: rgba(23, 32, 28, 0.12);
+  --line-color: rgba(23, 32, 28, 0.12);
+}
+
 html {
-  --line-color: #e5e7eb;
   scroll-behavior: smooth;
 }
 
-html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-forest-dark);
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.borderBlack {
-  @apply border border-black/10;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope), sans-serif;
 }
 
-/* Améliorations pour un design plus propre */
-.section-transition {
-  @apply transition-all duration-300 ease-in-out;
+/* Focus visible global */
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
-.gradient-text {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
-}
-
-.card-hover {
-  @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
-}
-
-/* Animation pour les éléments qui apparaissent */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* Amélioration des scrollbars */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
+  background: var(--color-ivory);
 }
-
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  background: rgba(35, 75, 61, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(35, 75, 61, 0.5);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400 dark:bg-gray-500;
+/* Utilities */
+.separator {
+  border-color: var(--color-separator);
+}
+
+/* Prose override for blog articles */
+.prose {
+  --tw-prose-body: var(--color-forest-dark);
+  --tw-prose-headings: var(--color-forest-dark);
+  --tw-prose-lead: #3a4f47;
+  --tw-prose-links: var(--color-forest);
+  --tw-prose-bold: var(--color-forest-dark);
+  --tw-prose-counters: var(--color-terracotta);
+  --tw-prose-bullets: var(--color-terracotta);
+  --tw-prose-hr: var(--color-separator);
+  --tw-prose-quotes: var(--color-forest);
+  --tw-prose-quote-borders: var(--color-terracotta);
+  --tw-prose-captions: #5a6b65;
+  --tw-prose-code: var(--color-forest);
+  --tw-prose-pre-code: #d4f0e7;
+  --tw-prose-pre-bg: var(--color-forest-dark);
+  --tw-prose-th-borders: var(--color-separator);
+  --tw-prose-td-borders: var(--color-separator);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles for CV page */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; }
 }
