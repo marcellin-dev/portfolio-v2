@@ -13,9 +13,9 @@ import type { Locale } from "@/lib/i18n";
 const cvData = {
   fr: {
     title: "Développeur Web Fullstack Senior",
-    headline: "TypeScript · React / Next.js · Node.js / NestJS · Fintech",
+    headline: "TypeScript · React / Next.js · Node.js / NestJS · .NET · Fintech",
     summary:
-      "Ingénieur logiciel avec plus de 5 ans d'expérience en développement fullstack, spécialisé en TypeScript, React/Next.js et Node.js/NestJS. Expérience des paiements et des applications financières, avec des responsabilités de Head of Engineering chez FreemoPay et une mission pour Constellio au Canada, entreprise du groupe Harris Computer. Compétences en conception d'API, CI/CD, conteneurisation et intégration de LLM.",
+      "Ingénieur logiciel avec plus de 5 ans d'expérience en développement fullstack, spécialisé en TypeScript, React/Next.js et Node.js/NestJS. Expérience des paiements et des applications financières, avec des responsabilités de Head of Engineering chez FreemoPay et une mission pour Constellio au Canada, entreprise du groupe Harris Computer. Compétences en conception d'API, CI/CD, conteneurisation et intégration de LLM, complétées par des workflows agentiques, des skills réutilisables et des connexions MCP.",
     labels: {
       profile: "Profil",
       skills: "Compétences techniques",
@@ -30,9 +30,9 @@ const cvData = {
   },
   en: {
     title: "Senior Full-Stack Web Developer",
-    headline: "TypeScript · React / Next.js · Node.js / NestJS · Fintech",
+    headline: "TypeScript · React / Next.js · Node.js / NestJS · .NET · Fintech",
     summary:
-      "Software engineer with over five years of full-stack development experience, specializing in TypeScript, React/Next.js and Node.js/NestJS. Experience in payments and financial applications, with Head of Engineering responsibilities at FreemoPay and an assignment for Constellio in Canada, a company within the Harris Computer group. Skilled in API design, CI/CD, containerization and LLM integration.",
+      "Software engineer with over five years of full-stack development experience, specializing in TypeScript, React/Next.js and Node.js/NestJS. Experience in payments and financial applications, with Head of Engineering responsibilities at FreemoPay and an assignment for Constellio in Canada, a company within the Harris Computer group. Skilled in API design, CI/CD, containerization and LLM integration, complemented by agentic workflows, reusable skills, and MCP connections.",
     labels: {
       profile: "Profile",
       skills: "Technical skills",
@@ -55,9 +55,9 @@ const experience = {
       date: "Février 2025 – Novembre 2026",
       type: "Freelance · Mission pour Constellio (Canada, groupe Harris Computer)",
       items: [
-        "Conception, développement et tests d'applications ; participation aux choix d'architecture.",
-        "Contribution à l'optimisation des performances et aux pratiques de développement.",
-        "Réunions de suivi et sessions de formation.",
+        "Conception, développement et tests d'applications ; participation aux choix d'architecture et à la feuille de route applicative.",
+        "Contribution à l'optimisation des performances et à l'amélioration des pratiques de développement.",
+        "Participation aux réunions de suivi avec les interlocuteurs du projet et aux sessions de formation.",
       ],
     },
     {
@@ -66,9 +66,9 @@ const experience = {
       date: "Janvier 2021 – Aujourd'hui",
       type: "Yaoundé, Cameroun",
       items: [
-        "Pilotage de l'équipe technique et des projets d'intégration de paiement.",
-        "Coordination des partenaires techniques, sécurité et fiabilité des transactions.",
-        "Supervision serveurs, gestion des incidents et amélioration des processus.",
+        "Pilotage de l'équipe technique et des projets d'intégration, de déploiement et d'exploitation de solutions de paiement.",
+        "Coordination des partenaires techniques et contribution à la sécurité, à la disponibilité et à la fiabilité des transactions.",
+        "Supervision des serveurs, gestion des incidents et amélioration des processus opérationnels.",
       ],
     },
     {
@@ -77,8 +77,8 @@ const experience = {
       date: "Août 2024 – Octobre 2024",
       type: "Freelance · Télétravail · France",
       items: [
-        "Conception et déploiement d'outils d'acquisition : téléchargeur LinkedIn, détecteur de spam.",
-        "Développement, intégration et déploiement complets des outils.",
+        "Conception et mise en ligne d'outils d'acquisition utilisateurs : téléchargeur de vidéos LinkedIn et détecteur de spam.",
+        "Prise en charge du développement complet, de l'intégration et du déploiement des outils.",
       ],
     },
     {
@@ -118,9 +118,9 @@ const experience = {
       date: "February 2025 – November 2026",
       type: "Freelance · Assignment for Constellio (Canada, Harris Computer group)",
       items: [
-        "Designed, developed and tested applications; contributed to architectural decisions.",
-        "Performance optimization and development practice improvements.",
-        "Project follow-up meetings and training sessions.",
+        "Designed, developed and tested applications; contributed to architectural decisions and the application roadmap.",
+        "Contributed to performance optimization and improvement of development practices.",
+        "Participated in project follow-up meetings with stakeholders and training sessions.",
       ],
     },
     {
@@ -129,9 +129,9 @@ const experience = {
       date: "January 2021 – Present",
       type: "Yaoundé, Cameroon",
       items: [
-        "Led the engineering team and payment integration projects.",
-        "Coordinated technical partners; transaction security and reliability.",
-        "Server oversight, incident management, and process improvements.",
+        "Led the engineering team and payment integration, deployment, and operations projects.",
+        "Coordinated technical partners and contributed to transaction security, availability, and reliability.",
+        "Oversaw servers, managed incidents, and improved operational processes.",
       ],
     },
     {
@@ -140,8 +140,8 @@ const experience = {
       date: "August 2024 – October 2024",
       type: "Freelance · Remote · France",
       items: [
-        "Designed and launched user acquisition tools: LinkedIn downloader, spam detector.",
-        "End-to-end development, integration and deployment of tools.",
+        "Designed and launched user acquisition tools: LinkedIn video downloader and spam detector.",
+        "Handled end-to-end development, integration, and deployment of the tools.",
       ],
     },
     {
@@ -178,37 +178,35 @@ const experience = {
 
 const aiItems = {
   fr: [
-    "Agents de développement : Cursor, Codex — décomposition, implémentation, refactoring, tests.",
-    "Context engineering et skills réutilisables pour guider les agents.",
-    "MCP (Model Context Protocol) — connexions agents aux outils et contextes.",
-    "LLM et tool calling : API OpenAI, function calling, orchestration backend.",
-    "Automatisation conversationnelle : assistant WhatsApp avec NestJS, Prisma, Google Calendar.",
+    "Agents de développement : Cursor, Codex — décomposition des tâches, implémentation, refactoring, génération de tests et revue des modifications.",
+    "Context engineering et skills : structuration du contexte projet, règles de développement et instructions spécialisées réutilisables pour guider les agents.",
+    "MCP (Model Context Protocol) : configuration et utilisation de connexions donnant aux agents accès aux outils et au contexte nécessaires à leurs tâches.",
+    "LLM et tool calling : API OpenAI, function calling, définition d'outils métier et orchestration de leur exécution côté backend.",
+    "Automatisation conversationnelle : assistant WhatsApp avec NestJS, Prisma et Google Calendar ; registre d'outils extensible et découverte automatique.",
   ],
   en: [
-    "Development agents: Cursor, Codex — task decomposition, implementation, refactoring, tests.",
-    "Context engineering and reusable agent skills to guide agents.",
-    "MCP (Model Context Protocol) — connecting agents to tools and contexts.",
-    "LLMs and tool calling: OpenAI API, function calling, backend orchestration.",
-    "Conversational automation: WhatsApp assistant with NestJS, Prisma, Google Calendar.",
+    "Development agents: Cursor, Codex — task decomposition, implementation, refactoring, test generation, and change review.",
+    "Context engineering and skills: project context structuring, development rules, and reusable specialized instructions to guide agents.",
+    "MCP (Model Context Protocol): configuring and using connections that give agents access to the tools and context needed for their tasks.",
+    "LLMs and tool calling: OpenAI API, function calling, business tool definitions, and backend orchestration.",
+    "Conversational automation: WhatsApp assistant with NestJS, Prisma, and Google Calendar; extensible tool registry with automatic discovery.",
   ],
 };
 
 const skillGroups = {
   fr: [
     { name: "Frontend & Backend", tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "NestJS", "API REST"] },
-    { name: "Backend", tags: ["C# / .NET", "Java / Spring Boot", "GraphQL", "WebSocket"] },
     { name: "Données", tags: ["PostgreSQL", "MySQL", "MongoDB", "SQL Server", "Prisma"] },
-    { name: "Architecture & qualité", tags: ["Architecture modulaire", "SOLID", "DRY", "Clean code", "Tests"] },
+    { name: "Architecture & qualité", tags: ["Architecture modulaire", "SOLID", "DRY", "Clean code", "Tests", "Intégration de services tiers"] },
     { name: "DevOps & CI/CD", tags: ["Git", "GitHub Actions", "Jenkins", "Docker", "Docker Compose", "Nginx", "Administration serveurs"] },
-    { name: "Complémentaires", tags: ["Angular", "Flutter"] },
+    { name: "Technologies complémentaires", tags: ["C# / .NET", "Angular", "Dart / Flutter"] },
   ],
   en: [
     { name: "Frontend & Backend", tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "NestJS", "REST APIs"] },
-    { name: "Backend", tags: ["C# / .NET", "Java / Spring Boot", "GraphQL", "WebSocket"] },
     { name: "Data", tags: ["PostgreSQL", "MySQL", "MongoDB", "SQL Server", "Prisma"] },
-    { name: "Architecture & quality", tags: ["Modular architecture", "SOLID", "DRY", "Clean code", "Testing"] },
+    { name: "Architecture & quality", tags: ["Modular architecture", "SOLID", "DRY", "Clean code", "Testing", "Third-party integrations"] },
     { name: "DevOps & CI/CD", tags: ["Git", "GitHub Actions", "Jenkins", "Docker", "Docker Compose", "Nginx", "Server administration"] },
-    { name: "Additional", tags: ["Angular", "Flutter"] },
+    { name: "Additional technologies", tags: ["C# / .NET", "Angular", "Dart / Flutter"] },
   ],
 };
 
