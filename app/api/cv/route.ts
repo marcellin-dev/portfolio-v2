@@ -14,16 +14,27 @@ const filenames: Record<Locale, string> = {
   en: "CV_Marcellin_Fougang_EN.pdf",
 };
 
-async function findLatestCV(): Promise<Buffer> {
+const staticCVFiles: Record<Locale, string> = {
+  fr: "CV-Marcellin-Fougang-FR.pdf",
+  en: "CV-Marcellin-Fougang-EN.pdf",
+};
+
+async function findStaticCV(locale: Locale): Promise<Buffer> {
   const publicDir = join(process.cwd(), "public");
-  const files = await readdir(publicDir);
-  const cvFiles = files.filter((f) => /^CV.*\.pdf$/i.test(f));
-  if (cvFiles.length === 0) throw new Error("No CV PDF found in public");
-  const withMtime = await Promise.all(
-    cvFiles.map(async (f) => ({ f, mtime: (await stat(join(publicDir, f))).mtimeMs }))
-  );
-  withMtime.sort((a, b) => b.mtime - a.mtime);
-  return readFile(join(publicDir, withMtime[0].f));
+  // Try the locale-specific pre-generated file first
+  try {
+    return await readFile(join(publicDir, staticCVFiles[locale]));
+  } catch {
+    // Fall back to any CV PDF sorted by most recently modified
+    const files = await readdir(publicDir);
+    const cvFiles = files.filter((f) => /^CV.*\.pdf$/i.test(f));
+    if (cvFiles.length === 0) throw new Error("No CV PDF found in public");
+    const withMtime = await Promise.all(
+      cvFiles.map(async (f) => ({ f, mtime: (await stat(join(publicDir, f))).mtimeMs }))
+    );
+    withMtime.sort((a, b) => b.mtime - a.mtime);
+    return readFile(join(publicDir, withMtime[0].f));
+  }
 }
 
 export async function GET(request: NextRequest) {
@@ -39,7 +50,7 @@ export async function GET(request: NextRequest) {
   } catch (dynamicError) {
     console.error("[cv] Dynamic generation failed, falling back to static:", dynamicError);
     try {
-      buffer = await findLatestCV();
+      buffer = await findStaticCV(locale);
     } catch (staticError) {
       console.error("[cv] Static fallback failed:", staticError);
       return new NextResponse(JSON.stringify({ error: "CV not available" }), {
@@ -49,7 +60,7 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  return new NextResponse(buffer, {
+  return new NextResponse(new Uint8Array(buffer), {
     status: 200,
     headers: {
       "Content-Type": "application/pdf",
