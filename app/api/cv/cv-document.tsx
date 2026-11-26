@@ -15,7 +15,7 @@ const cvData = {
     title: "Développeur Web Fullstack Senior",
     headline: "TypeScript · React / Next.js · Node.js / NestJS · .NET · Fintech",
     summary:
-      "Ingénieur logiciel avec plus de 5 ans d'expérience en développement fullstack, spécialisé en TypeScript, React/Next.js et Node.js/NestJS. Expérience des paiements et des applications financières, avec des responsabilités de Head of Engineering chez FreemoPay et une mission pour Constellio au Canada, entreprise du groupe Harris Computer. Compétences en conception d'API, CI/CD, conteneurisation et intégration de LLM, complétées par des workflows agentiques, des skills réutilisables et des connexions MCP.",
+      "Ingénieur logiciel avec plus de 5 ans d'expérience en développement fullstack, spécialisé en TypeScript, React/Next.js et Node.js/NestJS. Expérience des paiements et des applications financières, avec des responsabilités de Head of Engineering chez FreemoPay et une mission pour Constellio au Canada, entreprise du groupe Harris Computer. Autonome et orienté résultats, je sais traduire les besoins métier en solutions concrètes, coordonner une équipe et communiquer avec des interlocuteurs techniques comme non techniques. Compétences en conception d'API, CI/CD, conteneurisation et intégration de LLM, incluant les workflows agentiques, les skills réutilisables et les connexions MCP.",
     labels: {
       profile: "Profil",
       skills: "Compétences techniques",
@@ -32,7 +32,7 @@ const cvData = {
     title: "Senior Full-Stack Web Developer",
     headline: "TypeScript · React / Next.js · Node.js / NestJS · .NET · Fintech",
     summary:
-      "Software engineer with over five years of full-stack development experience, specializing in TypeScript, React/Next.js and Node.js/NestJS. Experience in payments and financial applications, with Head of Engineering responsibilities at FreemoPay and an assignment for Constellio in Canada, a company within the Harris Computer group. Skilled in API design, CI/CD, containerization and LLM integration, complemented by agentic workflows, reusable skills, and MCP connections.",
+      "Software engineer with over five years of full-stack development experience, specializing in TypeScript, React/Next.js and Node.js/NestJS. Experience in payments and financial applications, with Head of Engineering responsibilities at FreemoPay and an assignment for Constellio in Canada, a company within the Harris Computer group. Self-driven and results-oriented, I translate business needs into concrete solutions, coordinate teams, and communicate effectively with both technical and non-technical stakeholders. Skilled in API design, CI/CD, containerization and LLM integration, including agentic workflows, reusable skills, and MCP connections.",
     labels: {
       profile: "Profile",
       skills: "Technical skills",
