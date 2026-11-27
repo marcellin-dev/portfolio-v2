@@ -2,10 +2,12 @@
 
 import { getTranslations } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import AnimateOnScroll from "@/components/shared/AnimateOnScroll";
 import { sendEmail } from "@/actions/sendEmail";
 import { FiCheck } from "react-icons/fi";
+import { capture, hasOptedOut } from "@/lib/analytics/posthog/client";
+import { readAttribution } from "@/lib/analytics/campaigns/attribution";
 
 type RequestType = "project" | "ai" | "recruiting" | "other";
 
@@ -17,6 +19,29 @@ export default function ContactHome({ locale }: ContactHomeProps) {
   const t = getTranslations(locale).contact;
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [requestType, setRequestType] = useState<RequestType>("project");
+  const formStartedRef = useRef(false);
+
+  function captureCommon(extra: Record<string, unknown>) {
+    const attribution = readAttribution();
+    const pagePath = typeof window !== "undefined" ? window.location.pathname : `/${locale}/contact`;
+    return {
+      schema_version: 1,
+      locale,
+      page_path: pagePath,
+      environment: process.env.NODE_ENV === "production" ? "production" : "development",
+      is_test: false,
+      ...(attribution
+        ? { campaign_id: attribution.campaign_id, audience: attribution.audience, channel: attribution.channel }
+        : {}),
+      ...extra,
+    };
+  }
+
+  function handleFormFocus() {
+    if (formStartedRef.current || hasOptedOut()) return;
+    formStartedRef.current = true;
+    capture("contact_form_started", captureCommon({}));
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,15 +52,33 @@ export default function ContactHome({ locale }: ContactHomeProps) {
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
+    const attribution = readAttribution();
+
     const formData = new FormData();
     formData.set("senderEmail", email);
     formData.set(
       "message",
       `[Type: ${requestType}]\n[Nom: ${name}]\n\n${message}`
     );
+    formData.set("locale", locale);
+    formData.set("requestType", requestType);
+    if (attribution) {
+      formData.set("campaign_id", attribution.campaign_id);
+      formData.set("audience", attribution.audience);
+      formData.set("channel", attribution.channel);
+    }
 
     const result = await sendEmail(formData);
-    setStatus(result?.error ? "error" : "success");
+
+    if (result?.error) {
+      setStatus("error");
+      if (!hasOptedOut()) {
+        capture("contact_form_failed", captureCommon({ error_code: "client_error" }));
+      }
+    } else {
+      setStatus("success");
+      // contact_form_submitted is captured server-side in sendEmail.ts
+    }
   }
 
   return (
@@ -57,6 +100,11 @@ export default function ContactHome({ locale }: ContactHomeProps) {
                 <a
                   href="mailto:lelemarcellin@gmail.com"
                   className="text-forest font-medium hover:underline underline-offset-2"
+                  onClick={() => {
+                    if (!hasOptedOut()) {
+                      capture("contact_cta_clicked", captureCommon({ contact_method: "email", cta_location: "contact_page_sidebar" }));
+                    }
+                  }}
                 >
                   lelemarcellin@gmail.com
                 </a>
@@ -68,6 +116,11 @@ export default function ContactHome({ locale }: ContactHomeProps) {
                 <a
                   href="tel:+237695509408"
                   className="text-forest font-medium hover:underline underline-offset-2"
+                  onClick={() => {
+                    if (!hasOptedOut()) {
+                      capture("contact_cta_clicked", captureCommon({ contact_method: "phone", cta_location: "contact_page_sidebar" }));
+                    }
+                  }}
                 >
                   +237 695 509 408
                 </a>
@@ -85,7 +138,12 @@ export default function ContactHome({ locale }: ContactHomeProps) {
                 <p className="text-ivory/90">{t.successMessage}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+              <form
+                onSubmit={handleSubmit}
+                onFocus={handleFormFocus}
+                noValidate
+                className="flex flex-col gap-4"
+              >
                 {/* Request type */}
                 <fieldset>
                   <legend className="text-xs font-semibold text-forest-dark/50 uppercase tracking-wider mb-2">

@@ -1,7 +1,8 @@
 import type { Locale } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
-import Link from "next/link";
 import AnimateOnScroll from "@/components/shared/AnimateOnScroll";
+import CvDownloadButton from "@/components/analytics/CvDownloadButton";
+import ContactCtaLink from "@/components/analytics/ContactCtaLink";
 
 export function generateMetadata({ params }: { params: { locale: string } }) {
   const locale = params.locale as Locale;
@@ -163,37 +164,45 @@ export default function RecruteurPage({ params }: { params: { locale: string } }
             <p className="text-sm text-forest-dark/50 mb-6">{t.headline}</p>
             <p className="text-forest-dark/70 leading-relaxed max-w-2xl">{t.summary}</p>
             <div className="flex flex-wrap gap-4 mt-6">
-              <a
+              <ContactCtaLink
                 href="mailto:lelemarcellin@gmail.com"
+                method="email"
+                locale={locale}
+                ctaLocation="recruiter_header"
                 className="text-sm text-forest-dark/60 hover:text-forest transition-colors"
               >
                 lelemarcellin@gmail.com
-              </a>
-              <a
+              </ContactCtaLink>
+              <ContactCtaLink
                 href="tel:+237695509408"
+                method="phone"
+                locale={locale}
+                ctaLocation="recruiter_header"
                 className="text-sm text-forest-dark/60 hover:text-forest transition-colors"
               >
                 +237 695 509 408
-              </a>
+              </ContactCtaLink>
               <span className="text-sm text-forest-dark/40">Cameroun · Remote</span>
             </div>
           </div>
 
           {/* Action buttons */}
           <div className="flex flex-col gap-3 lg:min-w-[200px]">
-            <a
-              href={`/api/cv?locale=${locale}`}
-              download
+            <CvDownloadButton
+              locale={locale}
+              label={`${t.downloadCv} ↓`}
+              ctaLocation="recruiter_header"
               className="inline-flex items-center justify-center gap-2 bg-forest text-ivory font-semibold px-5 py-3 rounded hover:bg-forest-light transition-colors text-sm"
-            >
-              {t.downloadCv} ↓
-            </a>
-            <Link
+            />
+            <ContactCtaLink
               href={`/${locale}/contact`}
+              method="form"
+              locale={locale}
+              ctaLocation="recruiter_header"
               className="inline-flex items-center justify-center gap-2 border border-forest text-forest font-medium px-5 py-3 rounded hover:bg-forest hover:text-ivory transition-colors text-sm"
             >
               {t.proposeInterview}
-            </Link>
+            </ContactCtaLink>
           </div>
         </div>
       </AnimateOnScroll>
@@ -308,13 +317,12 @@ export default function RecruteurPage({ params }: { params: { locale: string } }
             </div>
 
             {/* Download again */}
-            <a
-              href={`/api/cv?locale=${locale}`}
-              download
+            <CvDownloadButton
+              locale={locale}
+              label={`${t.downloadCv} ↓`}
+              ctaLocation="recruiter_sidebar"
               className="mt-6 flex items-center justify-center gap-2 bg-forest text-ivory font-semibold px-5 py-3 rounded hover:bg-forest-light transition-colors text-sm w-full"
-            >
-              {t.downloadCv} ↓
-            </a>
+            />
           </AnimateOnScroll>
         </aside>
       </div>

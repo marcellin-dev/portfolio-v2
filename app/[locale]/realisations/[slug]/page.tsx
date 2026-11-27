@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import AnimateOnScroll from "@/components/shared/AnimateOnScroll";
 import ContactHome from "@/components/home/ContactHome";
+import ProjectViewTracker from "@/components/analytics/ProjectViewTracker";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -37,6 +38,7 @@ export default function ProjectDetailPage({
 
   return (
     <>
+      <ProjectViewTracker projectSlug={project.slug} locale={locale} />
       <div className="max-w-content mx-auto px-6 py-16">
         {/* Back */}
         <Link
