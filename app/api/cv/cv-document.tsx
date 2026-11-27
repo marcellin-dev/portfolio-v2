@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     fontFamily: "Helvetica-Bold",
     fontSize: 22,
     color: c.forestDark,
-    marginBottom: 2,
+    marginBottom: 6,
   },
   titleText: {
     fontFamily: "Helvetica",
