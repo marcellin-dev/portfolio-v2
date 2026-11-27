@@ -12,10 +12,11 @@ import type { Locale } from "@/lib/i18n";
 // Using the JSON data provided via the CV JSON file
 const cvData = {
   fr: {
-    title: "Développeur Web Fullstack Senior",
+    title: "Développeur Fullstack Senior / Lead Developer",
     headline: "TypeScript · React / Next.js · Node.js / NestJS · .NET · Fintech",
     summary:
       "Ingénieur logiciel avec plus de 5 ans d'expérience en développement fullstack, spécialisé en TypeScript, React/Next.js et Node.js/NestJS. Expérience des paiements et des applications financières, avec des responsabilités de Head of Engineering chez FreemoPay et une mission pour Constellio au Canada, entreprise du groupe Harris Computer. Autonome et orienté résultats, je sais traduire les besoins métier en solutions concrètes, coordonner une équipe et communiquer avec des interlocuteurs techniques comme non techniques. Compétences en conception d'API, CI/CD, conteneurisation et intégration de LLM, incluant les workflows agentiques, les skills réutilisables et les connexions MCP.",
+    availability: "Disponible immédiatement · Temps plein",
     labels: {
       profile: "Profil",
       skills: "Compétences techniques",
@@ -29,10 +30,11 @@ const cvData = {
     },
   },
   en: {
-    title: "Senior Full-Stack Web Developer",
+    title: "Senior Full-Stack Developer / Lead Developer",
     headline: "TypeScript · React / Next.js · Node.js / NestJS · .NET · Fintech",
     summary:
       "Software engineer with over five years of full-stack development experience, specializing in TypeScript, React/Next.js and Node.js/NestJS. Experience in payments and financial applications, with Head of Engineering responsibilities at FreemoPay and an assignment for Constellio in Canada, a company within the Harris Computer group. Self-driven and results-oriented, I translate business needs into concrete solutions, coordinate teams, and communicate effectively with both technical and non-technical stakeholders. Skilled in API design, CI/CD, containerization and LLM integration, including agentic workflows, reusable skills, and MCP connections.",
+    availability: "Immediately available · Full-time",
     labels: {
       profile: "Profile",
       skills: "Technical skills",
@@ -53,7 +55,7 @@ const experience = {
       company: "Nano Dev SARL",
       role: "Développeur Fullstack Senior",
       date: "Février 2025 – Novembre 2026",
-      type: "Freelance · Mission pour Constellio (Canada, groupe Harris Computer)",
+      type: "Freelance · Mission pour Constellio, entreprise du groupe Harris Computer, via Nano Dev SARL",
       items: [
         "Conception, développement et tests d'applications ; participation aux choix d'architecture et à la feuille de route applicative.",
         "Contribution à l'optimisation des performances et à l'amélioration des pratiques de développement.",
@@ -66,7 +68,7 @@ const experience = {
       date: "Janvier 2021 – Aujourd'hui",
       type: "Yaoundé, Cameroun",
       items: [
-        "Pilotage de l'équipe technique et des projets d'intégration, de déploiement et d'exploitation de solutions de paiement.",
+        "Pilotage de l'équipe technique ; définition et mise en œuvre de l'architecture microservices (gRPC, BullMQ, RabbitMQ) pour les solutions de paiement.",
         "Coordination des partenaires techniques et contribution à la sécurité, à la disponibilité et à la fiabilité des transactions.",
         "Supervision des serveurs, gestion des incidents et amélioration des processus opérationnels.",
       ],
@@ -98,9 +100,9 @@ const experience = {
       date: "Août 2022 – Février 2024",
       type: "Yaoundé, Cameroun",
       items: [
-        "Plugin Shopify (Node.js, React) et API Gateway .NET Core.",
-        "Évolution plateforme Avomark (.NET MVC) et ERP DGI Congo (Angular).",
-        "Solution de collecte de logs Elasticsearch/OpenSearch.",
+        "Développement d'un plugin Shopify (Node.js, React) et d'une API Gateway .NET Core pour connecter les applications existantes à Shopify.",
+        "Maintenance et évolution de la plateforme de fidélisation Avomark (.NET MVC, API REST) : refactoring, ajout de fonctionnalités et gestion des régressions.",
+        "Développement de fonctionnalités pour l'ERP de la DGI Congo (Angular) et centralisation des logs via Elasticsearch/OpenSearch.",
       ],
     },
     {
@@ -108,7 +110,7 @@ const experience = {
       role: "Développeur Frontend",
       date: "Août 2021 – Février 2022",
       type: "Yaoundé, Cameroun",
-      items: ["Développement d'interfaces web et intégration d'API."],
+      items: ["Développement d'interfaces web (Vue.js) et intégration d'API REST."],
     },
   ],
   en: [
@@ -116,7 +118,7 @@ const experience = {
       company: "Nano Dev SARL",
       role: "Senior Full-Stack Developer",
       date: "February 2025 – November 2026",
-      type: "Freelance · Assignment for Constellio (Canada, Harris Computer group)",
+      type: "Freelance · Assignment for Constellio, Harris Computer group, via Nano Dev SARL",
       items: [
         "Designed, developed and tested applications; contributed to architectural decisions and the application roadmap.",
         "Contributed to performance optimization and improvement of development practices.",
@@ -129,7 +131,7 @@ const experience = {
       date: "January 2021 – Present",
       type: "Yaoundé, Cameroon",
       items: [
-        "Led the engineering team and payment integration, deployment, and operations projects.",
+        "Led the engineering team; designed and implemented a microservices architecture (gRPC, BullMQ, RabbitMQ) for payment solutions.",
         "Coordinated technical partners and contributed to transaction security, availability, and reliability.",
         "Oversaw servers, managed incidents, and improved operational processes.",
       ],
@@ -161,9 +163,9 @@ const experience = {
       date: "August 2022 – February 2024",
       type: "Yaoundé, Cameroon",
       items: [
-        "Shopify plugin (Node.js, React) and .NET Core API Gateway.",
-        "Avomark loyalty platform (.NET MVC) and DGI Congo ERP (Angular).",
-        "Log collection solution with Elasticsearch/OpenSearch.",
+        "Developed a Shopify plugin (Node.js, React) and a .NET Core API Gateway to connect existing applications to Shopify.",
+        "Maintained and evolved the Avomark loyalty platform (.NET MVC, REST API): refactoring, feature additions, and regression management.",
+        "Developed features for the DGI Congo ERP (Angular) and centralized logs via Elasticsearch/OpenSearch.",
       ],
     },
     {
@@ -171,7 +173,7 @@ const experience = {
       role: "Frontend Developer",
       date: "August 2021 – February 2022",
       type: "Yaoundé, Cameroon",
-      items: ["Developed web interfaces and integrated APIs."],
+      items: ["Developed web interfaces (Vue.js) and integrated REST APIs."],
     },
   ],
 };
@@ -195,16 +197,16 @@ const aiItems = {
 
 const skillGroups = {
   fr: [
-    { name: "Frontend & Backend", tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "NestJS", "API REST"] },
+    { name: "Frontend & Backend", tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Vue.js", "Node.js", "NestJS", "API REST"] },
     { name: "Données", tags: ["PostgreSQL", "MySQL", "MongoDB", "SQL Server", "Prisma"] },
-    { name: "Architecture & qualité", tags: ["Architecture modulaire", "SOLID", "DRY", "Clean code", "Tests", "Intégration de services tiers"] },
+    { name: "Architecture & messaging", tags: ["Microservices", "gRPC", "BullMQ", "RabbitMQ", "SOLID", "Clean code", "Tests"] },
     { name: "DevOps & CI/CD", tags: ["Git", "GitHub Actions", "Jenkins", "Docker", "Docker Compose", "Nginx", "Administration serveurs"] },
     { name: "Technologies complémentaires", tags: ["C# / .NET", "Angular", "Dart / Flutter"] },
   ],
   en: [
-    { name: "Frontend & Backend", tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "NestJS", "REST APIs"] },
+    { name: "Frontend & Backend", tags: ["JavaScript", "TypeScript", "React.js", "Next.js", "Vue.js", "Node.js", "NestJS", "REST APIs"] },
     { name: "Data", tags: ["PostgreSQL", "MySQL", "MongoDB", "SQL Server", "Prisma"] },
-    { name: "Architecture & quality", tags: ["Modular architecture", "SOLID", "DRY", "Clean code", "Testing", "Third-party integrations"] },
+    { name: "Architecture & messaging", tags: ["Microservices", "gRPC", "BullMQ", "RabbitMQ", "SOLID", "Clean code", "Testing"] },
     { name: "DevOps & CI/CD", tags: ["Git", "GitHub Actions", "Jenkins", "Docker", "Docker Compose", "Nginx", "Server administration"] },
     { name: "Additional technologies", tags: ["C# / .NET", "Angular", "Dart / Flutter"] },
   ],
@@ -400,6 +402,12 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: c.muted,
   },
+  availabilityText: {
+    fontSize: 8,
+    color: c.terracotta,
+    marginTop: 5,
+    fontStyle: "italic",
+  },
 });
 
 export function CVDocument({ locale }: { locale: Locale }) {
@@ -434,6 +442,7 @@ export function CVDocument({ locale }: { locale: Locale }) {
             </Link>
             <Text style={styles.contactItem}>Cameroun · Remote</Text>
           </View>
+          <Text style={styles.availabilityText}>{data.availability}</Text>
         </View>
 
         {/* Profile */}
